@@ -517,7 +517,6 @@ const WalletDashboard = ({ privateKey, onLogout }) => {
       {/* Receive Modal */}
       {showReceiveModal && (
         <ReceiveModal 
-          address={receiveAddress}
           onClose={() => setShowReceiveModal(false)}
           copyToClipboard={copyToClipboard}
         />
@@ -529,6 +528,19 @@ const WalletDashboard = ({ privateKey, onLogout }) => {
           balances={balances}
           tokens={TOKENS}
           onClose={() => setShowSendModal(false)}
+        />
+      )}
+
+      {/* Token Detail Modal */}
+      {showTokenModal && selectedToken && (
+        <TokenModal 
+          token={selectedToken}
+          balance={balances[selectedToken.id] || 0}
+          onClose={() => {
+            setShowTokenModal(false);
+            setSelectedToken(null);
+          }}
+          copyToClipboard={copyToClipboard}
         />
       )}
     </div>
