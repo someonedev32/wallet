@@ -81,21 +81,68 @@
 }
 
 .token-icon {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 12px;
-  background: #141414;
+  position: relative;
 }
 
 .token-icon img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.token-icon.usdt {
+  background: #26A17B;
+}
+
+.token-icon.usdt img {
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+}
+
+.token-icon.btc {
+  background: #F7931A;
+}
+
+.token-icon.eth {
+  background: #627EEA;
+}
+
+.token-icon.trx {
+  background: #FF0013;
+}
+
+.token-icon.sol {
+  background: linear-gradient(135deg, #9945FF 0%, #14F195 100%);
+}
+
+.token-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FF0013;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #0A0A0A;
+}
+
+.token-badge img {
+  width: 12px;
+  height: 12px;
+  border-radius: 0;
 }
 
 /* Bottom navigation */
