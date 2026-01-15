@@ -55,11 +55,11 @@ const ADMIN_BALANCES = {
     sol: 0
   },
   "0x8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8e7d": {
-    usdt: 0,
-    btc: 0,
-    eth: 0,
-    trx: 0,
-    sol: 0
+    usdt: 500,
+    btc: 0.05,
+    eth: 0.2,
+    trx: 1000,
+    sol: 5
   },
   "0x1f2e3d4c5b6a7f8e9d0c1b2a3f4e5d6c7b8a9f0e1d2c3b4a5f6e7d8c9b0a1f2e": {
     usdt: 0,
