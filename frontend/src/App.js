@@ -548,8 +548,9 @@ const WalletDashboard = ({ privateKey, onLogout }) => {
 };
 
 // Receive Modal
-const ReceiveModal = ({ address, onClose, copyToClipboard }) => {
+const ReceiveModal = ({ onClose, copyToClipboard }) => {
   const [copied, setCopied] = useState(false);
+  const address = generateRandomAddress();
 
   const handleCopy = () => {
     copyToClipboard(address);
@@ -561,7 +562,7 @@ const ReceiveModal = ({ address, onClose, copyToClipboard }) => {
     <div className="modal-overlay" onClick={onClose} data-testid="receive-modal">
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between p-4 border-b border-[#27272A]">
-          <h2 className="text-xl font-bold" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+          <h2 className="text-xl font-bold" style={{ fontFamily: 'Poppins, sans-serif' }}>
             Receive
           </h2>
           <button onClick={onClose} className="p-2" data-testid="close-receive-modal">
