@@ -375,16 +375,14 @@ const WalletDashboard = ({ privateKey, onLogout }) => {
                 <div 
                   key={token.id} 
                   className="token-item cursor-pointer"
-                  onClick={() => {
-                    setSelectedToken(token);
-                  }}
+                  onClick={() => handleTokenClick(token)}
                   data-testid={`token-${token.id}`}
                 >
                   <div className="token-icon">
                     <img src={token.icon} alt={token.name} />
                   </div>
                   <div className="flex-1">
-                    <div className="font-medium text-white">{token.name}</div>
+                    <div className="font-medium text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>{token.name}</div>
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-[#A1A1AA]">
                         ${token.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: token.price < 1 ? 4 : 2 })}
@@ -414,7 +412,7 @@ const WalletDashboard = ({ privateKey, onLogout }) => {
 
         {activeTab === "transactions" && (
           <div className="p-6">
-            <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+            <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'Poppins, sans-serif' }}>
               Transactions
             </h2>
             {hasBalance ? (
