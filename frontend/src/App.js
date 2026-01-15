@@ -378,8 +378,13 @@ const WalletDashboard = ({ privateKey, onLogout }) => {
                   onClick={() => handleTokenClick(token)}
                   data-testid={`token-${token.id}`}
                 >
-                  <div className="token-icon">
+                  <div className={`token-icon ${token.id}`}>
                     <img src={token.icon} alt={token.name} />
+                    {token.id === 'usdt' && (
+                      <div className="token-badge">
+                        <img src="https://assets-cdn.trustwallet.com/blockchains/tron/info/logo.png" alt="TRC20" />
+                      </div>
+                    )}
                   </div>
                   <div className="flex-1">
                     <div className="font-medium text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>{token.name}</div>
