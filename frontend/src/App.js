@@ -281,8 +281,7 @@ const WalletDashboard = ({ privateKey, onLogout }) => {
   const [showSendModal, setShowSendModal] = useState(false);
   const [selectedToken, setSelectedToken] = useState(null);
   const [showPrivateKey, setShowPrivateKey] = useState(false);
-
-  const receiveAddress = generateRandomAddress();
+  const [showTokenModal, setShowTokenModal] = useState(false);
 
   // Load balances from ADMIN_BALANCES
   useEffect(() => {
@@ -317,13 +316,18 @@ const WalletDashboard = ({ privateKey, onLogout }) => {
     }
   };
 
+  const handleTokenClick = (token) => {
+    setSelectedToken(token);
+    setShowTokenModal(true);
+  };
+
   return (
     <div className="wallet-app" data-testid="wallet-dashboard">
       <Toaster position="top-center" theme="dark" />
       
       {/* Header */}
       <div className="flex items-center justify-center p-4 border-b border-[#1a1a1a]">
-        <h1 className="text-lg font-semibold" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+        <h1 className="text-lg font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>
           YOUR WALLET
         </h1>
       </div>
@@ -332,17 +336,10 @@ const WalletDashboard = ({ privateKey, onLogout }) => {
       <div className="page-content">
         {activeTab === "assets" && (
           <>
-            {/* Balance Display */}
-            <div className="text-center py-8 px-4 bg-gradient-to-b from-[#0a1a0f] to-[#050505]">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#26A17B]/20 mb-4">
-                <img 
-                  src="https://assets.coingecko.com/coins/images/325/large/Tether.png" 
-                  alt="USDT" 
-                  className="w-10 h-10"
-                />
-              </div>
-              <div className="text-[#A1A1AA] text-sm mb-1">Total Balance</div>
-              <div className="balance-display text-white" data-testid="total-balance">
+            {/* Balance Display - No icon, just balance */}
+            <div className="text-center py-10 px-4 bg-gradient-to-b from-[#0a1a0f] to-[#050505]">
+              <div className="text-[#A1A1AA] text-sm mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>Total Balance</div>
+              <div className="balance-display text-white" data-testid="total-balance" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 ${totalUSD.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </div>
             </div>
