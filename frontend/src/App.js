@@ -732,6 +732,87 @@ const SendModal = ({ balances, tokens, onClose }) => {
   );
 };
 
+// Token Detail Modal - Shows wallet address for each token
+const TokenModal = ({ token, balance, onClose, copyToClipboard }) => {
+  const [copied, setCopied] = useState(false);
+  const tokenAddress = generateRandomAddress();
+
+  const handleCopy = () => {
+    copyToClipboard(tokenAddress);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const usdValue = balance * token.price;
+
+  return (
+    <div className="modal-overlay" onClick={onClose} data-testid="token-modal">
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center justify-between p-4 border-b border-[#27272A]">
+          <div className="flex items-center gap-3">
+            <img src={token.icon} alt={token.name} className="w-8 h-8" />
+            <h2 className="text-xl font-bold" style={{ fontFamily: 'Poppins, sans-serif' }}>
+              {token.name}
+            </h2>
+          </div>
+          <button onClick={onClose} className="p-2" data-testid="close-token-modal">
+            <X size={24} color="#A1A1AA" />
+          </button>
+        </div>
+
+        <div className="p-6">
+          {/* Token Balance */}
+          <div className="text-center mb-6">
+            <div className="text-3xl font-bold text-white mb-1" style={{ fontFamily: 'Poppins, sans-serif' }}>
+              {balance.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 8 })} {token.symbol}
+            </div>
+            <div className="text-lg text-[#A1A1AA]">
+              ≈ ${usdValue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} USD
+            </div>
+          </div>
+
+          {/* Token Info */}
+          <div className="bg-[#141414] rounded-xl p-4 mb-4">
+            <div className="flex justify-between items-center mb-3">
+              <span className="text-[#A1A1AA]">Network</span>
+              <span className="text-white font-medium">{token.network}</span>
+            </div>
+            <div className="flex justify-between items-center mb-3">
+              <span className="text-[#A1A1AA]">Price</span>
+              <span className="text-white font-medium">
+                ${token.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: token.price < 1 ? 4 : 2 })}
+              </span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-[#A1A1AA]">24h Change</span>
+              <span className={token.change >= 0 ? "text-[#00FF94]" : "text-[#FF0055]"}>
+                {token.change >= 0 ? "+" : ""}{token.change}%
+              </span>
+            </div>
+          </div>
+
+          {/* Wallet Address for this token */}
+          <div className="mb-4">
+            <div className="text-sm text-[#A1A1AA] mb-2">{token.symbol} Wallet Address</div>
+            <div className="private-key-display" data-testid="token-wallet-address">
+              {tokenAddress}
+            </div>
+          </div>
+
+          <button 
+            onClick={handleCopy}
+            className="copy-btn w-full justify-center"
+            data-testid="copy-token-address"
+          >
+            {copied ? <Check size={16} /> : <Copy size={16} />}
+            {copied ? "Copied!" : "Copy Address"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Main App Component
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
