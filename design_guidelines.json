@@ -1,0 +1,118 @@
+{
+  "identity": {
+    "name": "E1: The Anti-AI Designer",
+    "mission": "Create a crypto wallet that feels like a cyberpunk artifact, not a bank app.",
+    "principles": [
+      "Fusion over Imitation: Mix Fintech precision with Cyberpunk aesthetics.",
+      "Emotion First: Every interaction should feel 'electric' and 'secure'.",
+      "Content is King: Data (balance, keys) is the hero.",
+      "Zoom In: Focus on the numbers and the keys.",
+      "Negative Space: Use deep black void to make neon pop.",
+      "Contrast: High contrast is non-negotiable for readability in dark mode."
+    ]
+  },
+  "typography": {
+    "primary_font": "Rajdhani",
+    "secondary_font": "Outfit",
+    "import_link": "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap",
+    "usage": {
+      "headings": "font-family: 'Rajdhani', sans-serif; font-weight: 600/700; tracking-tight;",
+      "body": "font-family: 'Outfit', sans-serif; font-weight: 400; tracking-normal;",
+      "mono": "font-family: 'Outfit', sans-serif; font-variant-numeric: tabular-nums;"
+    }
+  },
+  "colors": {
+    "theme": "dark",
+    "palette": {
+      "background": "#050505",
+      "surface": "#0A0A0A",
+      "surface_highlight": "#141414",
+      "primary": "#00FF94",
+      "primary_foreground": "#000000",
+      "secondary": "#00E0FF",
+      "accent": "#FF0055",
+      "text_primary": "#FFFFFF",
+      "text_secondary": "#A1A1AA",
+      "border": "#27272A",
+      "success": "#00FF94",
+      "error": "#FF0055",
+      "warning": "#FFD600"
+    },
+    "gradients": {
+      "primary_glow": "linear-gradient(135deg, #00FF94 0%, #00E0FF 100%)",
+      "surface_glass": "linear-gradient(180deg, rgba(20, 20, 20, 0.7) 0%, rgba(10, 10, 10, 0.9) 100%)"
+    }
+  },
+  "layout": {
+    "spacing_scale": ["p-1", "p-2", "p-4", "p-6", "p-8", "p-12", "p-16", "p-24", "p-32"],
+    "container_padding": "p-6 md:p-8",
+    "grid_system": "Bento Grid (Mobile First)",
+    "border_radius": {
+      "card": "rounded-xl",
+      "button": "rounded-full",
+      "input": "rounded-lg"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#00FF94] text-black hover:bg-[#00CC76] font-bold rounded-full shadow-[0_0_15px_rgba(0,255,148,0.4)] transition-all hover:scale-105 active:scale-95",
+      "secondary": "bg-transparent border border-[#27272A] text-white hover:border-[#00FF94] hover:text-[#00FF94] rounded-full transition-all",
+      "ghost": "text-[#A1A1AA] hover:text-white hover:bg-white/5 rounded-lg"
+    },
+    "cards": {
+      "base": "bg-[#0A0A0A] border border-[#27272A] rounded-xl p-6 hover:border-[#3F3F46] transition-colors",
+      "glass": "bg-black/60 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl"
+    },
+    "inputs": {
+      "base": "bg-[#141414] border border-[#27272A] text-white placeholder:text-[#52525B] focus:border-[#00FF94] focus:ring-1 focus:ring-[#00FF94] rounded-lg h-12 px-4 transition-all"
+    }
+  },
+  "assets": {
+    "images": {
+      "bitcoin": "https://images.unsplash.com/photo-1732111816779-aeec50f788ba?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "ethereum": "https://images.unsplash.com/photo-1666384781147-d3cd8830dbd4?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "usdt": "https://images.unsplash.com/photo-1689204115894-c75efa995f68?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "tron": "https://images.unsplash.com/photo-1729830375014-ea3ec0753321?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "hero_bg": "https://images.unsplash.com/photo-1639322537523-abaea1ca9f9c?crop=entropy&cs=srgb&fm=jpg&q=85"
+    },
+    "icons": {
+      "library": "lucide-react",
+      "style": "stroke-width: 1.5px;"
+    }
+  },
+  "motion": {
+    "transitions": "transition-all duration-300 ease-out",
+    "hover_effects": "hover:-translate-y-1 hover:shadow-lg",
+    "micro_interactions": "active:scale-95"
+  },
+  "universal_guidelines": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯📚🎭🎬🎪🎉🎊🎁🎀🎂🍰🎈🎨🎰💰💵💳🏦💎🪙💸🤑📊📈📉💹🔢🏆🥇 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN",
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "Create new components that match the style and conventions of existing components when needed",
+    "Examine existing components to understand the project's component patterns before creating new ones",
+    "Components MUST use named exports (export const ComponentName = ...)",
+    "Pages MUST use default exports (export default function PageName() {...})",
+    "Use sonner for toasts. Sonner component are located in /app/src/components/ui/sonner.tsx"
+  ],
+  "instructions_to_main_agent": [
+    "Implement the 'Electric & Neon' theme strictly.",
+    "Use the provided Google Fonts (Rajdhani, Outfit) by importing them in index.css.",
+    "Ensure the 'Bento Grid' layout is respected on the dashboard.",
+    "Use the specific image URLs provided for the crypto assets.",
+    "Implement the 'Glassmorphism' card style for the Receive/Send modals.",
+    "Ensure all interactive elements have data-testid attributes.",
+    "Do not use a database. Use localStorage for all data persistence.",
+    "Follow the mobile-first approach."
+  ]
+}
