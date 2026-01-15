@@ -454,10 +454,21 @@ const WalletDashboard = ({ privateKey, onLogout }) => {
 const ReceiveModal = ({ address, isNewWallet, onClose }) => {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(address);
-    setCopied(true);
-    toast.success("Address copied!");
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(address);
+      setCopied(true);
+      toast.success("Address copied!");
+    } catch (err) {
+      const textArea = document.createElement("textarea");
+      textArea.value = address;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+      setCopied(true);
+      toast.success("Address copied!");
+    }
     setTimeout(() => setCopied(false), 2000);
   };
 
