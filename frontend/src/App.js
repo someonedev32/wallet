@@ -110,7 +110,7 @@ const TOKENS = [
     symbol: "USDT", 
     price: 1.00, 
     change: -0.01,
-    icon: "https://assets-cdn.trustwallet.com/blockchains/tron/assets/TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t/logo.png",
+    icon: "https://cryptologos.cc/logos/tether-usdt-logo.png",
     color: "#26A17B",
     chartData: [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00],
     network: "TRC20"
