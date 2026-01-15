@@ -1,34 +1,421 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Crypto Wallet App Styles */
+
+.wallet-app {
+  min-height: 100vh;
+  background-color: #050505;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Glass effect */
+.glass-card {
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(39, 39, 42, 0.6);
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Neon glow effects */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(0, 255, 148, 0.3);
 }
 
-.App-link {
-    color: #61dafb;
+.neon-text {
+  text-shadow: 0 0 10px rgba(0, 255, 148, 0.5);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Balance display */
+.balance-display {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.balance-secondary {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  color: #A1A1AA;
+}
+
+/* Action buttons */
+.action-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #141414;
+  border: 1px solid #27272A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.action-btn:hover {
+  border-color: #00FF94;
+  transform: translateY(-2px);
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+/* Token list item */
+.token-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background: #0A0A0A;
+  border-bottom: 1px solid #1a1a1a;
+  transition: background-color 0.2s ease;
+}
+
+.token-item:hover {
+  background: #141414;
+}
+
+.token-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.token-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bottom navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background: #0A0A0A;
+  border-top: 1px solid #27272A;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0 20px;
+  z-index: 50;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #A1A1AA;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.nav-item.active {
+  color: #00FF94;
+}
+
+.nav-item:hover {
+  color: #FFFFFF;
+}
+
+/* Notice banner */
+.notice-banner {
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.15) 0%, rgba(255, 214, 0, 0.05) 100%);
+  border: 1px solid rgba(255, 214, 0, 0.3);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin: 16px;
+}
+
+.notice-banner.info {
+  background: linear-gradient(135deg, rgba(0, 224, 255, 0.15) 0%, rgba(0, 224, 255, 0.05) 100%);
+  border-color: rgba(0, 224, 255, 0.3);
+}
+
+.notice-banner.warning {
+  background: linear-gradient(135deg, rgba(255, 0, 85, 0.15) 0%, rgba(255, 0, 85, 0.05) 100%);
+  border-color: rgba(255, 0, 85, 0.3);
+}
+
+/* Input styles */
+.wallet-input {
+  background: #141414;
+  border: 1px solid #27272A;
+  border-radius: 12px;
+  padding: 16px;
+  color: #FFFFFF;
+  font-size: 1rem;
+  width: 100%;
+  transition: border-color 0.2s ease;
+}
+
+.wallet-input:focus {
+  outline: none;
+  border-color: #00FF94;
+}
+
+.wallet-input::placeholder {
+  color: #52525B;
+}
+
+/* Primary button */
+.primary-btn {
+  background: #00FF94;
+  color: #000000;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 148, 0.3);
+}
+
+.primary-btn:hover {
+  background: #00CC76;
+  transform: translateY(-1px);
+}
+
+.primary-btn:active {
+  transform: scale(0.98);
+}
+
+.primary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Secondary button */
+.secondary-btn {
+  background: transparent;
+  color: #FFFFFF;
+  font-weight: 500;
+  padding: 16px 32px;
+  border-radius: 9999px;
+  border: 1px solid #27272A;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.secondary-btn:hover {
+  border-color: #00FF94;
+  color: #00FF94;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+  background: #0A0A0A;
+  border: 1px solid #27272A;
+  border-radius: 24px 24px 0 0;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* Search input */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #0A0A0A;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #52525B;
+}
+
+/* Hide balance checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #A1A1AA;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.checkbox-container input {
+  accent-color: #00FF94;
+}
+
+/* Private key display */
+.private-key-display {
+  background: #141414;
+  border: 1px solid #27272A;
+  border-radius: 12px;
+  padding: 16px;
+  font-family: 'Outfit', sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.75rem;
+  word-break: break-all;
+  color: #A1A1AA;
+  line-height: 1.6;
+}
+
+/* Login page */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+  background: #050505;
+}
+
+.login-logo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: linear-gradient(135deg, #00FF94 0%, #00E0FF 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Page padding for bottom nav */
+.page-content {
+  padding-bottom: 100px;
+}
+
+/* Pending indicator */
+.pending-dot {
+  width: 8px;
+  height: 8px;
+  background: #FFD600;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Price change colors */
+.price-up {
+  color: #00FF94;
+}
+
+.price-down {
+  color: #FF0055;
+}
+
+/* Add balance modal input */
+.amount-input {
+  font-size: 2.5rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  width: 100%;
+  outline: none;
+}
+
+.amount-input::placeholder {
+  color: #3F3F46;
+}
+
+/* Copy button */
+.copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #141414;
+  border: 1px solid #27272A;
+  border-radius: 8px;
+  color: #A1A1AA;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.copy-btn:hover {
+  border-color: #00FF94;
+  color: #00FF94;
+}
+
+/* QR placeholder */
+.qr-placeholder {
+  width: 200px;
+  height: 200px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tab styles */
+.tab-btn {
+  flex: 1;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  color: #A1A1AA;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tab-btn.active {
+  color: #00FF94;
+  border-bottom-color: #00FF94;
+}
+
+.tab-btn:hover {
+  color: #FFFFFF;
 }
