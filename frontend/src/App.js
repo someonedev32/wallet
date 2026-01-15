@@ -92,11 +92,23 @@ const LoginPage = ({ onLogin }) => {
     toast.success("New private key generated!");
   };
 
-  const handleCopy = () => {
+  const handleCopy = async () => {
     if (generatedKey) {
-      navigator.clipboard.writeText(generatedKey);
-      setCopied(true);
-      toast.success("Private key copied!");
+      try {
+        await navigator.clipboard.writeText(generatedKey);
+        setCopied(true);
+        toast.success("Private key copied!");
+      } catch (err) {
+        // Fallback for environments where clipboard API is not available
+        const textArea = document.createElement("textarea");
+        textArea.value = generatedKey;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+        setCopied(true);
+        toast.success("Private key copied!");
+      }
       setTimeout(() => setCopied(false), 2000);
     }
   };
