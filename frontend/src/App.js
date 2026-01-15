@@ -110,9 +110,10 @@ const TOKENS = [
     symbol: "USDT", 
     price: 1.00, 
     change: -0.01,
-    icon: "https://assets.coingecko.com/coins/images/325/large/Tether.png",
+    icon: "https://assets-cdn.trustwallet.com/blockchains/tron/assets/TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t/logo.png",
     color: "#26A17B",
-    chartData: [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
+    chartData: [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00],
+    network: "TRC20"
   },
   { 
     id: "btc", 
@@ -122,7 +123,8 @@ const TOKENS = [
     change: 2.45,
     icon: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
     color: "#F7931A",
-    chartData: [42100, 42500, 41800, 43000, 43500, 42800, 43250]
+    chartData: [42100, 42500, 41800, 43000, 43500, 42800, 43250],
+    network: "Bitcoin"
   },
   { 
     id: "eth", 
@@ -130,9 +132,10 @@ const TOKENS = [
     symbol: "ETH", 
     price: 2580.40, 
     change: 1.82,
-    icon: "https://assets.coingecko.com/coins/images/279/large/ethereum.png",
+    icon: "https://assets-cdn.trustwallet.com/blockchains/ethereum/info/logo.png",
     color: "#627EEA",
-    chartData: [2450, 2520, 2480, 2550, 2600, 2560, 2580]
+    chartData: [2450, 2520, 2480, 2550, 2600, 2560, 2580],
+    network: "ERC20"
   },
   { 
     id: "trx", 
@@ -140,9 +143,10 @@ const TOKENS = [
     symbol: "TRX", 
     price: 0.1045, 
     change: -0.85,
-    icon: "https://assets.coingecko.com/coins/images/1094/large/tron-logo.png",
+    icon: "https://assets-cdn.trustwallet.com/blockchains/tron/info/logo.png",
     color: "#FF0013",
-    chartData: [0.105, 0.104, 0.106, 0.103, 0.105, 0.104, 0.1045]
+    chartData: [0.105, 0.104, 0.106, 0.103, 0.105, 0.104, 0.1045],
+    network: "TRC20"
   },
   { 
     id: "sol", 
@@ -150,9 +154,10 @@ const TOKENS = [
     symbol: "SOL", 
     price: 98.75, 
     change: 4.12,
-    icon: "https://assets.coingecko.com/coins/images/4128/large/solana.png",
+    icon: "https://assets-cdn.trustwallet.com/blockchains/solana/info/logo.png",
     color: "#9945FF",
-    chartData: [92, 94, 95, 96, 97, 99, 98.75]
+    chartData: [92, 94, 95, 96, 97, 99, 98.75],
+    network: "Solana"
   }
 ];
 
