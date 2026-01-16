@@ -1,6 +1,6 @@
 {
-  "buildCommand": "yarn build",
+  "buildCommand": "CI=false yarn build",
   "outputDirectory": "build",
-  "installCommand": "yarn install",
+  "installCommand": "yarn install --frozen-lockfile || yarn install",
   "framework": null
 }
