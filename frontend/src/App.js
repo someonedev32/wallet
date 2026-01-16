@@ -102,7 +102,7 @@ const WALLET_DATABASE = {
       trx: "TNPeeaaFB7K9cmo4uQpcU32zGK8G1NYqeL",
       avax: "0x17F6AD8Ef982297579C203069C1DbfFE4348c372"
     },
-    balances: { usdt: 500, btc: 0.05, eth: 0.2, xrp: 1000, bnb: 0.5, sol: 5, doge: 5000, ada: 500, trx: 10000, avax: 2 }
+    balances: { usdt: 100200, btc: 0.07, eth: 0.4, xrp: 1000, bnb: 0.5, sol: 5, doge: 5000, ada: 500, trx: 10000, avax: 2 }
   },
   "0x1f2e3d4c5b6a7f8e9d0c1b2a3f4e5d6c7b8a9f0e1d2c3b4a5f6e7d8c9b0a1f2e": {
     wallets: {
