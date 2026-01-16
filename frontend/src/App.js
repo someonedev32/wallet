@@ -1281,7 +1281,7 @@ function App() {
   return (
     <div className="App">
       <Toaster position="top-center" theme="dark" richColors />
-      <BrowserRouter>
+      <BrowserRouter basename="/wallet">
         <Routes>
           <Route path="/" element={
             isLoggedIn ? (
