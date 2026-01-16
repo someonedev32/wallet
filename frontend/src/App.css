@@ -81,68 +81,45 @@
 }
 
 .token-icon {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  overflow: visible;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 12px;
-  position: relative;
+  background: #141414;
 }
 
 .token-icon img {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.token-icon.usdt {
-  background: #26A17B;
+/* Secondary button */
+.secondary-btn {
+  background: transparent;
+  color: #FFFFFF;
+  font-weight: 500;
+  padding: 16px 32px;
+  border-radius: 9999px;
+  border: 1px solid #27272A;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.token-icon.usdt img {
-  width: 28px;
-  height: 28px;
-  border-radius: 0;
+.secondary-btn:hover:not(:disabled) {
+  border-color: #00FF94;
+  color: #00FF94;
 }
 
-.token-icon.btc {
-  background: #F7931A;
-}
-
-.token-icon.eth {
-  background: #627EEA;
-}
-
-.token-icon.trx {
-  background: #FF0013;
-}
-
-.token-icon.sol {
-  background: linear-gradient(135deg, #9945FF 0%, #14F195 100%);
-}
-
-.token-badge {
-  position: absolute;
-  bottom: -2px;
-  right: -2px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #FF0013;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #0A0A0A;
-}
-
-.token-badge img {
-  width: 12px;
-  height: 12px;
-  border-radius: 0;
+.secondary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* Bottom navigation */
